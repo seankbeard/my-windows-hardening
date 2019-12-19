@@ -1,0 +1,71 @@
+{
+  "revision_id": "68aab243138e25c99d67e2dd252e3e401cd1a3b95b4b1bd9fe0b27e4e0c603dd",
+  "name": "windows-harden",
+  "run_list": [
+    "recipe[windows_hardening::core_hardening]",
+    "recipe[windows_hardening::ciphers]",
+    "recipe[windows_hardening::deleteautologon]",
+    "recipe[windows_hardening::enable_winrm]",
+    "recipe[windows_hardening::enable_firewall]",
+    "recipe[windows_hardening::harden_ntlm]",
+    "recipe[windows_hardening::harden_winrm]",
+    "recipe[windows_hardening::schedule_task_update]",
+    "recipe[windows_hardening::windowsupdate]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "windows": {
+      "version": "6.0.1",
+      "identifier": "042f33803f392155c065c33572f454070c4a3a4d",
+      "dotted_decimal_identifier": "1177798148307233.24136916319695604.92389247695437",
+      "cache_key": "windows-6.0.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/windows/versions/6.0.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/windows/versions/6.0.1/download",
+        "version": "6.0.1"
+      }
+    },
+    "windows_hardening": {
+      "version": "0.1.0",
+      "identifier": "63da0d7e0854d76d46182c3124ebd5a469e9244b",
+      "dotted_decimal_identifier": "28105774178260183.30757842096039147.234902128239691",
+      "cache_key": "windows_hardening-d295ee809299adcfd78eb02eb6f644320bb4d680",
+      "origin": "https://github.com/wandersick/windows_hardening",
+      "source_options": {
+        "git": "https://github.com/wandersick/windows_hardening",
+        "revision": "d295ee809299adcfd78eb02eb6f644320bb4d680"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "windows",
+        "= 6.0.1"
+      ],
+      [
+        "windows_hardening",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "windows (6.0.1)": [
+
+      ],
+      "windows_hardening (0.1.0)": [
+        [
+          "windows",
+          ">= 0.0.0"
+        ]
+      ]
+    }
+  }
+}
